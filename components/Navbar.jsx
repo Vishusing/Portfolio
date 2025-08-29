@@ -32,7 +32,6 @@ export default function Navigation() {
             {item.name}
           </button>
         ))}
-        <LanguageSwitcher />
       </nav>
 
       {/* Mobile Menu Button */}
