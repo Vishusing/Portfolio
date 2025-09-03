@@ -2,9 +2,10 @@
 
 import { openGmail, mobileNo } from '@/lib/utility_functions'
 
+
 export default function Contact() {
   return (
-    <section id="contact" className="py-35 px-6">
+    <section id="contact" className="py-10 px-6">
       <div className="container mx-auto text-center">
         <h2 className="text-2xl md:text-5xl font-bold mb-6 text-gradient">
           Let's Work Together

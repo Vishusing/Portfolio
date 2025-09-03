@@ -2,8 +2,8 @@
 export default function FloatingShapes() {
   const shapes = [
     { size: 'w-64 h-64', color: 'bg-purple-500', delay: '0s', left: '10%', top: '10%' },
-    { size: 'w-32 h-32', color: 'bg-blue-500', delay: '4s', left: '75%', top: '30%' },
-    { size: 'w-48 h-48', color: 'bg-indigo-500', delay: '8s', left: '45%', top: '60%' },
+    { size: 'w-32 h-32', color: 'bg-blue-500', delay: '2s', left: '75%', top: '30%' },
+    { size: 'w-48 h-48', color: 'bg-indigo-500', delay: '2s', left: '45%', top: '60%' },
   ];
 
   return (

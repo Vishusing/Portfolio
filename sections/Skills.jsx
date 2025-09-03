@@ -10,7 +10,7 @@ export default function Skills() {
   ]
 
   return (
-    <section className="py-30 px-6">
+    <section className="py-28 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">

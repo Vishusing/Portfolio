@@ -1,7 +1,6 @@
 import * as motion from "motion/react-client"
 
 import Hero from './Hero'
-import About from './About'
 import Skills from './Skills'
 import Contact from './Contact'
 
@@ -27,9 +26,6 @@ export default function Sections() {
     <>
       <AnimatedSection>
         <Hero />
-      </AnimatedSection>
-      <AnimatedSection>
-        <About />
       </AnimatedSection>
       <AnimatedSection>
         <Skills />
