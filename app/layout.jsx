@@ -4,6 +4,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import FloatingShapes from '@/ui/FloatingShapes'
 
+import ToasterProvider from '@/components/ToasterProvider'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -19,6 +21,7 @@ export default function RootLayout({ children }) {
         <FloatingShapes />
         <Header />
           {children}  
+          <ToasterProvider />
         <Footer />
       </body>
     </html>

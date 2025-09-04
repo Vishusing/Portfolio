@@ -18,7 +18,6 @@ function AnimatedSection({ children }) {
 
 
 export default function About() {
-  
 
   return (
     <AnimatedSection>
@@ -27,7 +26,6 @@ export default function About() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">About Me</h2>
           </div>
-
           <div className="flex flex-col gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-300 leading-relaxed text-lg">
@@ -44,9 +42,6 @@ export default function About() {
                 and make a meaningful mark in the world of AI and software development.
               </p>
               <p className="text-gray-300 leading-relaxed text-lg">
-
-              </p>
-              <p className="text-gray-300 leading-relaxed text-lg">
                 🌱 Currently open to opportunities where I can leverage my skills in Python, AI, and web development while continuing to learn,
                 innovate, and contribute to impactful projects.
               </p>
@@ -58,8 +53,6 @@ export default function About() {
                 When I'm not coding, you'll find me exploring new technologies or sharing knowledge with the developer community.
               </p>
             </div>
-
-            
           </div>
         </div>
       </section>

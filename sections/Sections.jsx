@@ -3,6 +3,7 @@ import * as motion from "motion/react-client"
 import Hero from './Hero'
 import Skills from './Skills'
 import Contact from './Contact'
+import ContactForm from "@/components/ContactForm";
 
 
 function AnimatedSection({ children }) {
@@ -21,7 +22,7 @@ function AnimatedSection({ children }) {
 
 
 export default function Sections() {
-  
+
   return (
     <>
       <AnimatedSection>
@@ -32,6 +33,9 @@ export default function Sections() {
       </AnimatedSection>
       <AnimatedSection>
         <Contact />
+      </AnimatedSection>
+      <AnimatedSection>
+        <ContactForm />
       </AnimatedSection>
     </>
   )
