@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import Spinner from '@/ui/Spinner';
+
+
 
 export default function ContactForm() {
   // Only subject and content (message) are needed from user
@@ -89,9 +92,15 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
         >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          {isSubmitting ? (
+            <>
+              <Spinner />
+            </>
+          ) : (
+            'Send Message'
+          )}
         </button>
       </form>
     </div>
