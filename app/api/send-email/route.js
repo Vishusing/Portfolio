@@ -38,11 +38,8 @@ export async function POST(request) {
     const mailOptions = {
       from: gmailUser,
       to: gmailUser, // Always send to your Gmail
-      subject: `Contact Form: ${subject}`,
+      subject: `${subject}`,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
         <p>${content.replace(/\n/g, '<br>')}</p>
       `,
     };
