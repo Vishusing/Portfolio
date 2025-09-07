@@ -1,5 +1,7 @@
 'use client';
 import Typewriter from 'typewriter-effect';
+import Link from 'next/link';
+
 import { downloadResume } from '@/lib/utility_functions'
 import { socialLinks } from '@/lib/social_media_icons';
 
@@ -39,13 +41,15 @@ export default function Hero() {
         {/* Social Links */}
         <div className="flex justify-center space-x-6">
           {socialLinks.map((social) => (
-            <a
+            <Link
               key={social.name}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all duration-300"
             >
               {social.icon}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
