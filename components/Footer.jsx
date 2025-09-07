@@ -30,7 +30,7 @@ export default function Footer() {
       {showScroll && (
         <button
           onClick={scrollToHero}
-          className="fixed bottom-8 right-8 z-50 bg-purple-600 hover:bg-purple-700
+          className="fixed bottom-8 right-8 z-50 bg-blue-800 hover:bg-blue-900
              text-white p-2 rounded-full shadow-lg 
               cursor-pointer"
           aria-label="Scroll to top"
