@@ -10,23 +10,14 @@ export default function Navbar() {
 
   const router = useRouter();
 
-  const baseNavItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-  ];
-
-  const contactNavItem = { name: 'Contact', href: '#contact' };
-
-  
   const handleNavClick = (href) => {
     if (href === '/') {
-      setShowContact(true); // Show Contact on Home
+      setShowContact(true); 
       router.push(href);
     } else if (href === '/about') {
-      setShowContact(false); // Hide Contact on About
+      setShowContact(false); 
       router.push(href);
     } else if (href === '#contact') {
-      // Scroll to contact section
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -52,23 +43,28 @@ export default function Navbar() {
           <div className="order-1 md:order-2">
             {/* Desktop Navigation Bar */}
             <nav className="hidden md:flex space-x-8">
-              {baseNavItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className="hover:text-purple-400 cursor-pointer transition-colors duration-300"
-                >
-                  {item.name}
-                </button>
-              ))}
+              <button
+                key="Home"
+                onClick={() => handleNavClick('/')}
+                className="hover:text-purple-400 cursor-pointer transition-colors duration-300"
+              >
+                Home
+              </button>
+              <button
+                key="About"
+                onClick={() => handleNavClick('/about')}
+                className="hover:text-purple-400 cursor-pointer transition-colors duration-300"
+              >
+                About
+              </button>
               {/* Conditionally render Contact button */}
               {showContact && (
                 <button
-                  key={contactNavItem.name}
-                  onClick={() => handleNavClick(contactNavItem.href)}
+                  key="Contact"
+                  onClick={() => handleNavClick('#contact')}
                   className="hover:text-purple-400 cursor-pointer transition-colors duration-300"
                 >
-                  {contactNavItem.name}
+                  Contact
                 </button>
               )}
             </nav>
@@ -111,23 +107,28 @@ export default function Navbar() {
             </svg>
           </button>
           {/* Render navigation items */}
-          {baseNavItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => handleNavClick(item.href)}
-              className="text-left hover:text-purple-400 transition-colors duration-300 text-lg"
-            >
-              {item.name}
-            </button>
-          ))}
+          <button
+            key="Home"
+            onClick={() => handleNavClick('/')}
+            className="text-left hover:text-purple-400 transition-colors duration-300 text-lg"
+          >
+            Home
+          </button>
+          <button
+            key="About"
+            onClick={() => handleNavClick('/about')}
+            className="text-left hover:text-purple-400 transition-colors duration-300 text-lg"
+          >
+            About
+          </button>
           {/* Conditionally render Contact button */}
           {showContact && (
             <button
-              key={contactNavItem.name}
-              onClick={() => handleNavClick(contactNavItem.href)}
+              key="Contact"
+              onClick={() => handleNavClick('#contact')}
               className="text-left hover:text-purple-400 transition-colors duration-300 text-lg"
             >
-              {contactNavItem.name}
+              Contact
             </button>
           )}
         </div>
