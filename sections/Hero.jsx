@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 import Link from 'next/link';
 
 import { downloadResume } from '@/lib/utility_functions'
-import { socialLinks } from '@/lib/social_media_icons';
+import { socialLinks } from '@/public/social_media_icons';
 
 export default function Hero() {
 
