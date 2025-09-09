@@ -4,35 +4,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-/**
- * Header component renders a fixed header with portfolio branding
- * and a responsive navigation bar with Home, About, and Contact links.
- * The Contact button is only shown on the Home page. The navigation
- * adapts for desktop and mobile, with a side drawer for mobile.
- */
 export default function Navbar() {
-  // State to control mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // State to control visibility of the Contact button
   const [showContact, setShowContact] = useState(true);
 
   const router = useRouter();
 
-  // Navigation items always present
   const baseNavItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
   ];
-  // Contact navigation item (conditionally rendered)
+
   const contactNavItem = { name: 'Contact', href: '#contact' };
 
-  /**
-   * Handles navigation logic for all nav items.
-   * - Navigates to Home or About using router.push.
-   * - Shows Contact button only on Home.
-   * - Scrolls to Contact section for Contact button.
-   * - Closes mobile menu after navigation.
-   */
+  
   const handleNavClick = (href) => {
     if (href === '/') {
       setShowContact(true); // Show Contact on Home
