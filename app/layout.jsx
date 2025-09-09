@@ -4,7 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import FloatingShapes from '@/ui/FloatingShapes'
 
-import ToasterProvider from '@/components/ToasterProvider'
+import ToasterProvider from '@/ui/ToasterProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
