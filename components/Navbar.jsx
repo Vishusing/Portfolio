@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 /**
- * Navigation component renders a responsive navigation bar
- * with Home, About, and Contact links. The Contact button
- * is only shown on the Home page. The navigation adapts for
- * desktop and mobile, with a side drawer for mobile.
+ * Header component renders a fixed header with portfolio branding
+ * and a responsive navigation bar with Home, About, and Contact links.
+ * The Contact button is only shown on the Home page. The navigation
+ * adapts for desktop and mobile, with a side drawer for mobile.
  */
-export default function Navigation() {
+export default function Navbar() {
   // State to control mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // State to control visibility of the Contact button
@@ -51,41 +52,56 @@ export default function Navigation() {
   };
 
   return (
-    <>
-      {/* Desktop Navigation Bar */}
-      <nav className="hidden md:flex space-x-8">
-        {baseNavItems.map((item) => (
-          <button
-            key={item.name}
-            onClick={() => handleNavClick(item.href)}
-            className="hover:text-purple-400 cursor-pointer transition-colors duration-300"
+    <header className="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-[5px]">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between md:justify-around">
+          {/* Portfolio name: left on desktop, right on mobile */}
+          <Link
+            href="/"
+            className="text-2xl cursor-pointer font-bold text-gradient ml-0 md:ml-0 order-2 md:order-1"
           >
-            {item.name}
-          </button>
-        ))}
-        {/* Conditionally render Contact button */}
-        {showContact && (
-          <button
-            key={contactNavItem.name}
-            onClick={() => handleNavClick(contactNavItem.href)}
-            className="hover:text-purple-400 cursor-pointer transition-colors duration-300"
-          >
-            {contactNavItem.name}
-          </button>
-        )}
-      </nav>
+            Portfolio
+          </Link>
+          
+          {/* Navigation: right on desktop, left on mobile */}
+          <div className="order-1 md:order-2">
+            {/* Desktop Navigation Bar */}
+            <nav className="hidden md:flex space-x-8">
+              {baseNavItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className="hover:text-purple-400 cursor-pointer transition-colors duration-300"
+                >
+                  {item.name}
+                </button>
+              ))}
+              {/* Conditionally render Contact button */}
+              {showContact && (
+                <button
+                  key={contactNavItem.name}
+                  onClick={() => handleNavClick(contactNavItem.href)}
+                  className="hover:text-purple-400 cursor-pointer transition-colors duration-300"
+                >
+                  {contactNavItem.name}
+                </button>
+              )}
+            </nav>
 
-      {/* Mobile Menu Button (Hamburger Icon) */}
-      <div className="flex items-center md:hidden w-full">
-        <button
-          className="md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Open menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+            {/* Mobile Menu Button (Hamburger Icon) */}
+            <div className="flex items-center md:hidden w-full">
+              <button
+                className="md:hidden"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Open menu"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Side Drawer Menu */}
@@ -131,6 +147,6 @@ export default function Navigation() {
           )}
         </div>
       </div>
-    </>
+    </header>
   );
 }
