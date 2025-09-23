@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "motion": "^12.23.16",
+    "motion": "^12.23.18",
     "next": "^15.5.3",
     "nodemailer": "^7.0.6",
     "react": "^19.1.1",
