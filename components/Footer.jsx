@@ -42,7 +42,7 @@ export default function Footer() {
       )}
       <div className="container mx-auto text-center">
         <p className="text-gray-400 mb-4">
-          &copy; 2025 Vishal Singh All rights reserved.
+          &copy; 2026 Vishal Singh All rights reserved.
         </p>
         <p className="text-gray-500 text-sm">
           Built with ❤️ and lots of coffee
