@@ -18,9 +18,9 @@
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/eslintrc": "^3.3.4",
     "@tailwindcss/postcss": "^4.2.1",
-    "eslint": "^10.0.1",
+    "eslint": "^10.0.2",
     "eslint-config-next": "^16.1.6",
     "tailwindcss": "^4.1.16"
   }
