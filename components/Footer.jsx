@@ -10,7 +10,6 @@ export default function Footer() {
       const footer = document.getElementById('footer-scroll-anchor');
       if (!footer) return;
       const rect = footer.getBoundingClientRect();
-      // Show button if footer is in or near viewport
       setShowScroll(rect.top < window.innerHeight && rect.bottom > 0);
     };
     window.addEventListener('scroll', handleScroll);
