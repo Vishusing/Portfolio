@@ -1,7 +1,7 @@
 export const socialLinks = [
     {
       name: 'Instagram',
-      href: 'https://www.instagram.com/_vishusin_',
+      href: 'https://www.instagram.com/vishusin_',
       icon: (
         <svg 
         xmlns="http://www.w3.org/2000/svg" 
