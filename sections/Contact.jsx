@@ -8,10 +8,10 @@ export default function Contact() {
     <section id="contact" className="py-10 px-6">
       <div className="container mx-auto text-center">
         <h2 className="text-2xl md:text-5xl font-bold mb-6 text-gradient">
-          Let's Work Together
+          Let&apos;s Work Together
         </h2>
         <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-          Ready to bring your ideas to life? Let's discuss
+          Ready to bring your ideas to life? Let&apos;s discuss
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

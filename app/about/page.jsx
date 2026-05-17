@@ -34,7 +34,7 @@ export default function About() {
                 Interest in exploring the genai tools like chatGPT, Gemini, Claude, MistralAI, Grok, Copilot, PerplexityAI.
               </p>
               <p className="text-gray-300 leading-relaxed text-lg">
-                When I'm not coding, you'll find me exploring new technologies or sharing knowledge with the developer community.
+                When I&apos;m not coding, you&apos;ll find me exploring new technologies or sharing knowledge with the developer community.
               </p>
             </div>
           </div>

@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="container mx-auto px-6 text-center">
         <div className="animate-float">
           <h1 className=" flex justify-center gap-2 text-2xl md:text-5xl font-black mb-6 leading-tight">
-            Hi, I'm{' '}
+            Hi, I&apos;m{' '}
             <span className="text-gradient">
               <Typewriter
                 options={{
