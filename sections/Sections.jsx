@@ -1,28 +1,10 @@
-import * as motion from "motion/react-client"
-
+import AnimatedSection from '@/ui/AnimatedSection'
 import Hero from './Hero'
 import Skills from './Skills'
 import Contact from './Contact'
-import ContactForm from "@/components/ContactForm";
-
-
-function AnimatedSection({ children }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 2 }}
-      viewport={{ once: true, amount: 0.3 }}
-      className="mb-20"
-    >
-      {children}
-    </motion.div>
-  );
-}
-
+import ContactForm from '@/components/ContactForm'
 
 export default function Sections() {
-
   return (
     <>
       <AnimatedSection>

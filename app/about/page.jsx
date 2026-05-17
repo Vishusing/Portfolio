@@ -1,24 +1,8 @@
-"use client";
+"use client"
 
-import * as motion from "motion/react-client"
-
-function AnimatedSection({ children }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 2 }}
-      viewport={{ once: true, amount: 0.3 }}
-      className="mb-20"
-    >
-      {children}
-    </motion.div>
-  );
-}
-
+import AnimatedSection from '@/ui/AnimatedSection'
 
 export default function About() {
-
   return (
     <AnimatedSection>
       <section id="about" className="py-30 px-6">

@@ -1,37 +1,28 @@
 'use client'
-import Link from "next/link";
-import { useEffect, useState } from 'react';
+
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export default function Footer() {
-  const [showScroll, setShowScroll] = useState(false);
+  const [showScroll, setShowScroll] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const footer = document.getElementById('footer-scroll-anchor');
-      if (!footer) return;
-      const rect = footer.getBoundingClientRect();
-      setShowScroll(rect.top < window.innerHeight && rect.bottom > 0);
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const handleScroll = () => setShowScroll(window.scrollY > 400)
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const scrollToHero = () => {
-    const hero = document.getElementById('home');
-    if (hero) {
-      hero.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
-    <footer id="footer-scroll-anchor" className="py-6 px-1 border-t border-gray-800 relative">
+    <footer className="py-6 px-1 border-t border-gray-800 relative">
       {showScroll && (
         <button
           onClick={scrollToHero}
-          className="fixed bottom-8 right-8 z-50 bg-blue-800 hover:bg-blue-900
-             text-white p-2 rounded-full shadow-lg 
-              cursor-pointer"
+          className="fixed bottom-8 right-8 z-50 bg-blue-800 hover:bg-blue-900 text-white p-2 rounded-full shadow-lg cursor-pointer"
           aria-label="Scroll to top"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

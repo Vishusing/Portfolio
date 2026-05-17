@@ -1,6 +1,3 @@
-
-// Spinner component for a more realistic circular loading animation
-
 export default function Spinner() {
   return (
     <span className="inline-block align-middle mr-2">
@@ -34,5 +31,5 @@ export default function Spinner() {
         />
       </svg>
     </span>
-  );
+  )
 }

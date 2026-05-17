@@ -38,7 +38,6 @@ export default function Hero() {
           <span className="text-black">Download Resume</span>
         </button>
 
-        {/* Social Links */}
         <div className="flex justify-center space-x-6">
           {socialLinks.map((social) => (
             <Link

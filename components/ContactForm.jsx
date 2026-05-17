@@ -1,56 +1,44 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { toast } from 'react-hot-toast';
-import Spinner from '@/ui/Spinner';
-
-
+import { useState } from 'react'
+import { toast } from 'react-hot-toast'
+import Spinner from '@/ui/Spinner'
 
 export default function ContactForm() {
-  // Only subject and content (message) are needed from user
-  const [formData, setFormData] = useState({
-    subject: '',
-    content: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({ subject: '', content: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
     try {
-      // Send only subject and content to backend
       const response = await fetch('/api/send-email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subject: formData.subject,
-          content: formData.content
+          content: formData.content,
         }),
-      });
+      })
 
       if (response.ok) {
-        toast.success('Email sent successfully!');
-        setFormData({ subject: '', content: '' });
+        toast.success('Email sent successfully!')
+        setFormData({ subject: '', content: '' })
       } else {
-        throw new Error('Failed to send email');
+        throw new Error('Failed to send email')
       }
-    } catch (error) {
-      toast.error('Failed to send email. Please try again.');
+    } catch {
+      toast.error('Failed to send email. Please try again.')
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <div className="border border-white rounded-lg w-full max-w-md mx-auto">
@@ -92,18 +80,11 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-blue-800 text-white py-2 px-4 rounded-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 
-          disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed flex items-center justify-center"
+          className="w-full bg-blue-800 text-white py-2 px-4 rounded-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed flex items-center justify-center"
         >
-          {isSubmitting ? (
-            <>
-              <Spinner />
-            </>
-          ) : (
-            'Send'
-          )}
+          {isSubmitting ? <Spinner /> : 'Send'}
         </button>
       </form>
     </div>
-  );
+  )
 }

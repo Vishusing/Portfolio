@@ -17,7 +17,7 @@ export default function Contact() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <button
             className='inline-flex items-center gap-2 font-semibold rounded-full transition-all duration-300 px-4 py-4 text-lg cursor-pointer bg-amber-50'
-            onClick={() => openGmail()}
+            onClick={openGmail}
           >
             <svg className="w-5 h-5 bg-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -31,7 +31,7 @@ export default function Contact() {
           </button>
           <button
             className='inline-flex items-center gap-2 font-semibold rounded-full transition-all duration-300 border-2 border-purple-500 hover:bg-purple-500 hover:scale-105 px-4 py-4 text-lg cursor-pointer'
-            onClick={() => mobileNo()}
+            onClick={mobileNo}
           >
             Schedule a Call
           </button>
